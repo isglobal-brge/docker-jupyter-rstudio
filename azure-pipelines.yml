@@ -1,0 +1,27 @@
+resources:
+  pipelines:
+  - pipeline: base
+    source: lifecycle-project.ds-upload
+    trigger:
+      branches:
+       - develop
+      tags:
+       - '*'
+
+pr:
+- main
+
+jobs:  
+  - job: DockerPipeline 
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Bash@3
+      displayName: Build all rserver images
+      inputs:
+        filePath: .azure/build_docker.bash 
+      env:
+        DOCKERHUB_AUTH: $(DOCKERHUB_AUTH)
+        GITHUB_TOKEN: $(GITHUB_TOKEN)
+        PACKAGE_NAME: $(Build.TriggeredBy.ProjectID) 
+        PACKAGE_VERSION: $(PACKAGE_MAJOR_VERSION)

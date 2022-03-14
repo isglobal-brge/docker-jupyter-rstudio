@@ -1,0 +1,60 @@
+{
+  "name": "@brgelab/rstudio-jupyter-omics",
+  "version": "1.0.0",
+  "license": "LGPL-3.0",
+  "description": "RStudio for JupyterHub with dsBaseClient 6.1.0 and dsOmicsClient 1.0.7",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isglobal-brge/docker-jupyter-rstudio-base.git"
+  },
+  "author": "Sido Haakma",
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/github": "^8.0.0",
+    "semantic-release": "^17.4.7",
+    "semantic-release-commit-filter": "^1.0.2"
+  },
+  "scripts": {
+    "release": "semantic-release --ci --branches main"
+  },
+  "release": {
+    "branches": "main",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "CHANGELOG.md"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ]
+    ],
+    "extends": [
+      "semantic-release-commit-filter"
+    ]
+  }
+}
