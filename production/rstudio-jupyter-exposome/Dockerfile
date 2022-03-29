@@ -17,7 +17,7 @@ ENV DS_DEP_VERSION "6.1.1"
 RUN installGithub.r "datashield/dsBaseClient@${DS_DEP_VERSION}" --deps=TRUE
 
 # Install dsExposomeClient
-ENV DS_PKG_VERSION "2.0.1"
+ENV DS_PKG_VERSION "2.0.2"
 RUN conda install r-units r-sf
 RUN installGithub.r "isglobal-brge/dsExposomeClient@${DS_PKG_VERSION}" --deps=TRUE 
 

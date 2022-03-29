@@ -1,8 +1,8 @@
 {
   "name": "@brgelab/rstudio-jupyter-exposome",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "license": "LGPL-3.0",
-  "description": "RStudio for JupyterHub with dsBaseClient 6.1.1 and dsExposomeClient 2.0.1",
+  "description": "RStudio for JupyterHub with dsBaseClient 6.1.1 and dsExposomeClient 2.x.x",
   "repository": {
     "type": "git",
     "url": "https://github.com/isglobal-brge/docker-jupyter-rstudio-base.git"

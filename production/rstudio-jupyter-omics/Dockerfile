@@ -11,8 +11,12 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installBioc.r /usr/local/bin
 ENV BIOCMANAGER_VERSION "v1.30.16"
 RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
 
+# Install OS deps for dsOmicsClient
+RUN apt install libfftw3-dev
+RUN conda install -c conda-forge fftw 
+
 # Install dsOmicsClient
-ENV DSOMICS_VERSION "v1.0.7"
+ENV DSOMICS_VERSION "1.0.8"
 RUN installGithub.r "isglobal-brge/dsOmicsClient@${DSOMICS_VERSION}"
 
 USER ${NB_USER}
