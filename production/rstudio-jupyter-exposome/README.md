@@ -3,8 +3,17 @@ Based upon [datashield/rstudio-jupyter](https://hub.docker.com/r/datashield/rstu
 
 ## Contents
 The exposome environment is pre-installed on the RStudio.
-- [dsBaseClient](https://github.com/datashield/dsBaseClient/tree/6.1.1)=6.1.1
-- [dsExposomeClient](https://github.com/isglobal-brge/dsExposomeClient/tree/2.0.2)=2.0.2
+- [dsBaseClient](https://github.com/datashield/dsBaseClient)
+- [dsExposomeClient](https://github.com/isglobal-brge/dsExposomeClient)
+
+## Build
+To build the needed images you need to exceute the following command:
+
+```bash
+docker build . -t brgelab/rstudio-jupyter-exposome:*major-version* -t brgelab/rstudio-jupyter-exposome:latest -t brgelab/rstudio-jupyter-exposome:*specific-tag*
+# example
+docker build . -t brgelab/rstudio-jupyter-exposome:2 -t brgelab/rstudio-jupyter-exposome:latest -t brgelab/rstudio-jupyter-exposome:2.0.3
+```
 
 ## Usage
 You can use the image locally as well. Run the following snippet:
