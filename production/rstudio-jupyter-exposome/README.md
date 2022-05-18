@@ -15,6 +15,11 @@ docker build . -t brgelab/rstudio-jupyter-exposome:*major-version* -t brgelab/rs
 docker build . -t brgelab/rstudio-jupyter-exposome:2 -t brgelab/rstudio-jupyter-exposome:latest -t brgelab/rstudio-jupyter-exposome:2.0.3
 ```
 
+## Release
+You can publish to dockerhub using the `docker push`.
+
+`docker push brgelab/rstudio-jupyter-exposome`
+
 ## Usage
 You can use the image locally as well. Run the following snippet:
 
